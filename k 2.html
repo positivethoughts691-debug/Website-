@@ -1,0 +1,767 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Happy Birthday Partner ❤️</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+overflow-x:hidden;
+font-family:'Poppins',sans-serif;
+color:white;
+
+/* NEW PREMIUM BACKGROUND */
+
+background:
+linear-gradient(rgba(0,0,0,0.35),rgba(0,0,0,0.35)),
+url('https://images.unsplash.com/photo-1513151233558-d860c5398176?q=80&w=1600&auto=format&fit=crop');
+
+background-size:cover;
+background-position:center;
+background-attachment:fixed;
+}
+
+/* OVERLAY */
+
+.overlay-bg{
+position:fixed;
+inset:0;
+background:linear-gradient(
+45deg,
+rgba(255,0,128,0.25),
+rgba(255,102,178,0.25),
+rgba(255,0,102,0.25)
+);
+z-index:-2;
+animation:bgMove 8s infinite alternate;
+}
+
+@keyframes bgMove{
+from{
+filter:hue-rotate(0deg);
+}
+to{
+filter:hue-rotate(40deg);
+}
+}
+
+/* STARS */
+
+.stars{
+position:fixed;
+inset:0;
+overflow:hidden;
+z-index:-1;
+}
+
+.star{
+position:absolute;
+width:3px;
+height:3px;
+background:white;
+border-radius:50%;
+animation:twinkle 2s infinite;
+}
+
+@keyframes twinkle{
+50%{
+opacity:0.2;
+transform:scale(0.5);
+}
+}
+
+/* HEARTS */
+
+.heart{
+position:fixed;
+bottom:-30px;
+color:white;
+font-size:22px;
+animation:floatHeart linear forwards;
+opacity:0.8;
+pointer-events:none;
+}
+
+@keyframes floatHeart{
+
+0%{
+transform:translateY(0) rotate(0deg);
+opacity:0;
+}
+
+20%{
+opacity:1;
+}
+
+100%{
+transform:translateY(-120vh) rotate(360deg);
+opacity:0;
+}
+
+}
+
+/* HERO */
+
+.hero{
+min-height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:20px;
+}
+
+.hero h1{
+font-size:6rem;
+font-family:'Dancing Script',cursive;
+text-shadow:
+0 0 15px #fff,
+0 0 30px #ff66b2,
+0 0 50px #ff1493;
+animation:glow 2s infinite alternate;
+}
+
+@keyframes glow{
+from{
+transform:scale(1);
+}
+to{
+transform:scale(1.05);
+}
+}
+
+.partner{
+font-size:3rem;
+margin-top:15px;
+font-weight:700;
+}
+
+.date{
+margin-top:10px;
+font-size:1.3rem;
+letter-spacing:5px;
+}
+
+.quote{
+margin-top:30px;
+font-size:1.3rem;
+max-width:800px;
+line-height:2;
+}
+
+.start-btn{
+margin-top:40px;
+padding:18px 45px;
+border:none;
+border-radius:50px;
+font-size:1.1rem;
+font-weight:700;
+cursor:pointer;
+background:white;
+color:#ff1493;
+transition:0.4s;
+box-shadow:0 0 20px rgba(255,255,255,0.5);
+}
+
+.start-btn:hover{
+transform:scale(1.1);
+}
+
+/* BALLOONS */
+
+.section{
+padding:80px 20px;
+text-align:center;
+}
+
+.section h2{
+font-size:3rem;
+font-family:'Dancing Script',cursive;
+margin-bottom:20px;
+}
+
+#count{
+font-size:1.3rem;
+margin-bottom:40px;
+}
+
+.balloons{
+display:flex;
+justify-content:center;
+gap:40px;
+flex-wrap:wrap;
+}
+
+.balloon{
+width:110px;
+height:140px;
+border-radius:50%;
+position:relative;
+cursor:pointer;
+animation:floatBalloon 4s ease-in-out infinite;
+transition:0.4s;
+box-shadow:inset -10px -10px 20px rgba(0,0,0,0.2);
+}
+
+.balloon::after{
+content:'';
+position:absolute;
+width:2px;
+height:70px;
+background:white;
+bottom:-70px;
+left:50%;
+}
+
+.red{
+background:#ff4d6d;
+}
+
+.blue{
+background:#4da6ff;
+}
+
+.purple{
+background:#b84dff;
+}
+
+.balloon:hover{
+transform:scale(1.1);
+}
+
+@keyframes floatBalloon{
+50%{
+transform:translateY(-25px);
+}
+}
+
+.pop{
+animation:pop 0.6s forwards;
+}
+
+@keyframes pop{
+to{
+transform:scale(2);
+opacity:0;
+}
+}
+
+/* CARDS */
+
+.hidden{
+display:none;
+}
+
+.card{
+max-width:1100px;
+margin:60px auto;
+padding:50px;
+border-radius:35px;
+background:rgba(255,255,255,0.15);
+backdrop-filter:blur(12px);
+box-shadow:0 10px 40px rgba(0,0,0,0.4);
+text-align:center;
+}
+
+.card h2{
+font-size:3rem;
+margin-bottom:20px;
+font-family:'Dancing Script',cursive;
+}
+
+.card p{
+font-size:1.15rem;
+line-height:2;
+}
+
+/* 3D CAKE */
+
+.cake-scene{
+margin-top:40px;
+display:flex;
+justify-content:center;
+perspective:1200px;
+}
+
+.cake-3d{
+position:relative;
+width:220px;
+height:220px;
+transform-style:preserve-3d;
+animation:rotateCake 8s linear infinite;
+}
+
+@keyframes rotateCake{
+0%{
+transform:rotateY(0deg);
+}
+100%{
+transform:rotateY(360deg);
+}
+}
+
+/* LAYERS */
+
+.layer{
+position:absolute;
+left:50%;
+transform:translateX(-50%);
+border-radius:20px;
+box-shadow:0 10px 20px rgba(0,0,0,0.3);
+}
+
+.layer1{
+bottom:0;
+width:220px;
+height:80px;
+background:#ff66a3;
+}
+
+.layer2{
+bottom:65px;
+width:180px;
+height:70px;
+background:#ff99c8;
+}
+
+.layer3{
+bottom:125px;
+width:140px;
+height:60px;
+background:#ffd6e7;
+}
+
+/* ICING */
+
+.icing{
+position:absolute;
+top:-10px;
+left:0;
+width:100%;
+height:18px;
+background:white;
+border-radius:50px;
+}
+
+/* CANDLE */
+
+.candle{
+position:absolute;
+top:-55px;
+left:50%;
+transform:translateX(-50%);
+width:16px;
+height:55px;
+background:#fff0f5;
+border-radius:10px;
+}
+
+.flame{
+position:absolute;
+top:-18px;
+left:50%;
+transform:translateX(-50%);
+width:20px;
+height:28px;
+background:gold;
+border-radius:50%;
+box-shadow:0 0 20px orange;
+animation:flicker .7s infinite;
+}
+
+@keyframes flicker{
+50%{
+transform:translateX(-50%) scale(0.8);
+opacity:0.7;
+}
+}
+
+/* GALLERY */
+
+.gallery{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:25px;
+margin-top:40px;
+}
+
+.photo{
+position:relative;
+overflow:hidden;
+border-radius:25px;
+}
+
+.photo img{
+width:100%;
+height:380px;
+object-fit:cover;
+transition:0.5s;
+}
+
+.photo:hover img{
+transform:scale(1.1);
+}
+
+.overlay{
+position:absolute;
+inset:0;
+background:rgba(0,0,0,0.3);
+display:flex;
+justify-content:center;
+align-items:center;
+font-size:2rem;
+opacity:0;
+transition:0.4s;
+}
+
+.photo:hover .overlay{
+opacity:1;
+}
+
+/* FOOTER */
+
+footer{
+padding:40px;
+text-align:center;
+font-size:1rem;
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+.hero h1{
+font-size:3.5rem;
+}
+
+.partner{
+font-size:2rem;
+}
+
+.quote{
+font-size:1rem;
+}
+
+.card{
+padding:30px;
+}
+
+.balloon{
+width:90px;
+height:120px;
+}
+
+.cake-3d{
+transform:scale(0.8);
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- MUSIC -->
+
+<audio id="music" autoplay loop hidden>
+<source src="https://www.image2url.com/r2/default/audio/1778581643070-6ebe8480-2611-4eaa-aa14-8c017cee7c9c.mp3" type="audio/mp3">
+</audio>
+
+<div class="overlay-bg"></div>
+
+<div class="stars" id="stars"></div>
+
+<!-- HERO -->
+
+<section class="hero">
+
+<h1>🎉 Happy Birthday 🎉</h1>
+
+<div class="partner">
+Partner ❤️
+</div>
+
+
+
+<div class="quote">
+“You are my favorite chapter,
+my forever happiness,
+and the most beautiful part of my life.” 💖
+</div>
+
+<button class="start-btn" onclick="goBalloons()">
+Open Birthday Surprise 🎁
+</button>
+
+</section>
+
+<!-- BALLOONS -->
+
+<section class="section" id="balloonSection">
+
+<h2></h2>
+
+<div id="count">
+
+<span id="counter"></span>
+</div>
+
+<div class="balloons" id="balloons"></div>
+
+</section>
+
+<!-- SURPRISE -->
+
+<section id="surprise" class="hidden">
+
+<div class="card">
+
+<h2>💖 Lovely Birthday Message 💖</h2>
+
+<p>
+
+Happy Birthday My Love ❤️
+
+<br><br>
+
+Dear Dineshkumar,
+
+<br><br>
+
+You are my happiness,
+my peace,
+my comfort,
+and my forever person.
+
+Every heartbeat of mine
+whispers your name forever.
+
+I wish your life shines brighter
+than stars
+and sweeter than dreams.
+
+<br><br>
+
+🎂 Happy Birthday Future Husband 💍
+
+</p>
+
+<!-- 3D CAKE -->
+
+<div class="cake-scene">
+
+<div class="cake-3d">
+
+<div class="layer layer1">
+<div class="icing"></div>
+</div>
+
+<div class="layer layer2">
+<div class="icing"></div>
+</div>
+
+<div class="layer layer3">
+<div class="icing"></div>
+
+<div class="candle">
+<div class="flame"></div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- LOVE LETTER -->
+
+<div class="card">
+
+<h2>💌 Love Letter 💌</h2>
+
+<p>
+
+My Dearest Partner ❤️
+
+<br><br>
+
+No matter where life takes us,
+my heart will always belong to you.
+
+You are my smile,
+my dream,
+my peace,
+and my forever home.
+
+I will love you
+today,
+tomorrow,
+and forever.
+
+</p>
+
+</div>
+
+<!-- PHOTOS -->
+
+<div class="card">
+
+<h2>📸 Beautiful Memories 📸</h2>
+
+<div class="gallery">
+
+<div class="photo">
+<img src="https://www.image2url.com/r2/default/files/1778744693604-a74899ea-181d-4899-9d08-4fd0a37f6b3e.jpeg">
+<div class="overlay">❤️</div>
+</div>
+
+<div class="photo">
+<img src="https://www.image2url.com/r2/default/files/1778744747020-531b765b-07ba-421e-8add-97408c86e2e6.jpeg">
+<div class="overlay">💕</div>
+</div>
+
+<div class="photo">
+<img src="https://www.image2url.com/r2/default/files/1778744794236-830c1fb0-585a-4632-8116-3cc62924ad7f.jpeg">
+<div class="overlay">💖</div>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<footer>
+Made With Endless Love ❤️
+</footer>
+
+<script>
+
+/* AUTO MUSIC */
+
+window.addEventListener('click',()=>{
+document.getElementById('music').play();
+},{once:true});
+
+/* STARS */
+
+for(let i=0;i<150;i++){
+
+const star=document.createElement('div');
+
+star.classList.add('star');
+
+star.style.left=Math.random()*100+'vw';
+
+star.style.top=Math.random()*100+'vh';
+
+star.style.animationDelay=Math.random()*3+'s';
+
+document.getElementById('stars').appendChild(star);
+
+}
+
+/* HEARTS */
+
+function createHeart(){
+
+const heart=document.createElement('div');
+
+heart.classList.add('heart');
+
+heart.innerHTML='❤';
+
+heart.style.left=Math.random()*100+'vw';
+
+heart.style.animationDuration=(Math.random()*5+5)+'s';
+
+document.body.appendChild(heart);
+
+setTimeout(()=>{
+heart.remove();
+},10000);
+
+}
+
+setInterval(createHeart,350);
+
+/* SCROLL */
+
+function goBalloons(){
+
+document.getElementById('balloonSection')
+.scrollIntoView({
+behavior:'smooth'
+});
+
+}
+
+/* BALLOONS */
+
+const balloons=document.getElementById('balloons');
+
+const colors=['red','blue','purple'];
+
+let popped=0;
+
+colors.forEach(color=>{
+
+const balloon=document.createElement('div');
+
+balloon.classList.add('balloon',color);
+
+balloon.addEventListener('click',()=>{
+
+if(!balloon.classList.contains('pop')){
+
+balloon.classList.add('pop');
+
+popped++;
+
+document.getElementById('counter').innerText=popped;
+
+if(popped===3){
+
+setTimeout(()=>{
+
+alert("🎉 Happy Birthday Partner ❤️ 🎂");
+
+document.getElementById('surprise')
+.classList.remove('hidden');
+
+document.getElementById('surprise')
+.scrollIntoView({
+behavior:'smooth'
+});
+
+},700);
+
+}
+
+}
+
+});
+
+balloons.appendChild(balloon);
+
+});
+
+</script>
+
+</body>
+</html>
